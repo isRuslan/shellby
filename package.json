@@ -1,0 +1,33 @@
+{
+  "name": "shelly",
+  "version": "0.0.0",
+  "main": "lib/shelly.js",
+  "description": "exec shell commands",
+  "homepage": "https://github.com/isRuslan/shelly",
+  "bugs": "https://github.com/isRuslan/shelly/issues",
+  "author": {
+    "name": "Ruslan Ismagilov",
+    "email": "is.ismagilov@gmail.com",
+    "url": "ruslan-ismagilov.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isRuslan/shelly"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [],
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
