@@ -1,8 +1,17 @@
+/*! poly v0.1.0 - MIT license */
+
 'use strict';
 
-// single command
-exports.exec = function(cmd, cb){
-  var child_process = require('child_process');
+/**
+ * Module dependencies
+ */
+var child_process = require('child_process');
+
+/**
+ * @param {}
+ * @return {}
+ */
+function exec (cmd, cb) {
   var parts = cmd.split(/\s+/g);
   var p = child_process.spawn(parts[0], parts.slice(1), {stdio: 'inherit'});
   p.on('exit', function(code){
@@ -14,10 +23,9 @@ exports.exec = function(cmd, cb){
     }
     if (cb) cb(err);
   });
-}; 
- 
-// execute multiple commands in series
-exports.series = function(cmds, cb){
+}
+
+function series (cmds, cb) {
   var execNext = function(){
     exports.exec(cmds.shift(), function(err){
       if (err) {
@@ -30,5 +38,13 @@ exports.series = function(cmds, cb){
       }
     });
   };
-  execNext();
+  execNext();  
+}
+
+/**
+ * Module exports
+ */
+module.exports = {
+  exec: exec,
+  series: series
 };

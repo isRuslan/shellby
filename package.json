@@ -1,7 +1,6 @@
 {
   "name": "shelly",
-  "version": "0.0.0",
-  "main": "lib/shelly.js",
+  "version": "0.1.0",
   "description": "exec shell commands",
   "homepage": "https://github.com/isRuslan/shelly",
   "bugs": "https://github.com/isRuslan/shelly/issues",
@@ -15,9 +14,6 @@
     "url": "https://github.com/isRuslan/shelly"
   },
   "license": "MIT",
-  "files": [
-    "lib"
-  ],
   "keywords": [],
   "dependencies": {
     "mocha": "^1.20.0",
