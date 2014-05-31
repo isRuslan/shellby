@@ -26,19 +26,17 @@ function exec (cmd, cb) {
 }
 
 function series (cmds, cb) {
-  var execNext = function(){
-    exports.exec(cmds.shift(), function(err){
-      if (err) {
-        cb(err);
-      } else {
-        if
-          (cmds.length) execNext();
-        else
-          cb(null);
-      }
+  cb = cb || function () {}
+  
+  var next = function(){
+    exec(cmds.shift(), function(err){
+      if (err) return cb(err);
+      cmds.length
+        ? next()
+        : cb(null);
     });
   };
-  execNext();  
+  next();  
 }
 
 /**
