@@ -1,9 +1,9 @@
 {
-  "name": "shelly",
+  "name": "shellby",
   "version": "0.1.0",
   "description": "exec shell commands",
-  "homepage": "https://github.com/isRuslan/shelly",
-  "bugs": "https://github.com/isRuslan/shelly/issues",
+  "homepage": "https://github.com/isRuslan/shellby",
+  "bugs": "https://github.com/isRuslan/shellby/issues",
   "author": {
     "name": "Ruslan Ismagilov",
     "email": "is.ismagilov@gmail.com",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/isRuslan/shelly"
+    "url": "https://github.com/isRuslan/shellby"
   },
   "license": "MIT",
   "keywords": [],

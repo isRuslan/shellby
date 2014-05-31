@@ -1,13 +1,13 @@
-# shelly [![Build Status](https://secure.travis-ci.org/isRuslan/shelly.png?branch=master)](http://travis-ci.org/isRuslan/shelly)
+# shellby [![Build Status](https://secure.travis-ci.org/isRuslan/shellby.png?branch=master)](http://travis-ci.org/isRuslan/shellby)
 
 exec shell commands
 
 ## Getting Started
-Install the module with: `npm install shelly`
+Install the module with: `npm install shellby`
 
 ```javascript
-var shelly = require('shelly');
-shelly.awesome(); // "awesome"
+var shellby = require('shellby');
+shellby.awesome(); // "awesome"
 ```
 
 ## Documentation
