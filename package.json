@@ -2,6 +2,7 @@
   "name": "shellby",
   "version": "0.1.0",
   "description": "exec shell commands",
+  "license": "MIT",
   "homepage": "https://github.com/isRuslan/shellby",
   "bugs": "https://github.com/isRuslan/shellby/issues",
   "author": {
@@ -13,11 +14,18 @@
     "type": "git",
     "url": "https://github.com/isRuslan/shellby"
   },
-  "license": "MIT",
-  "keywords": [],
-  "dependencies": {
-    "mocha": "^1.20.0",
-    "chai": "^1.9.1"
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "unix",
+    "shell",
+    "exec",
+    "mutiple exec",
+    "command"
+  ],
+  "devDependencies": {
+    "mocha": "*"
   },
   "scripts": {
     "test": "mocha --no-colors --reporter spec"

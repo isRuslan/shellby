@@ -5,19 +5,24 @@
 /**
  * Module dependencies
  */
-var child_process = require('child_process');
+var spawn = require('child_process').spawn;
 
 /**
  * @param {}
  * @return {}
  */
 function exec (cmd, cb) {
-  var parts = cmd.split(/\s+/g);
-  var p = child_process.spawn(parts[0], parts.slice(1), {stdio: 'inherit'});
+  var parts = cmd.split(/\s+/g)
+    , p = spawn( parts[0], parts.slice(1), {stdio: 'inherit'} );
+  
+  p.on('error', function (err) {
+    console.log( err );
+  });
+  
   p.on('exit', function(code){
     var err = null;
     if (code) {
-      err = new Error('command "'+ cmd +'" exited with wrong status code "'+ code +'"');
+      err = new Error('command %s exited with wrong status code %s', cmd, code);
       err.code = code;
       err.cmd = cmd;
     }
@@ -26,7 +31,7 @@ function exec (cmd, cb) {
 }
 
 function series (cmds, cb) {
-  cb = cb || function () {}
+  cb = cb || function () {};
   
   var next = function(){
     exec(cmds.shift(), function(err){
