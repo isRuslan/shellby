@@ -60,7 +60,7 @@ describe('Series: create a file and write text there:', function () {
 describe('Dummy command', function () {
   it('Should throw error', function () {    
     shellby.exec('asasas', function (error) {
-    	assert.equal(/spawn ENOENT/.test(error), true);
+    	assert.equal(error instanceof Error, true);
     });
   });	
 });
