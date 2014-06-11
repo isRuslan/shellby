@@ -1,9 +1,8 @@
 # shellby [![Build Status](https://secure.travis-ci.org/isRuslan/shellby.png?branch=master)](http://travis-ci.org/isRuslan/shellby)
 
-> Run single/series shell commands.
+> Run single/series shell commands from node.js.
 
 ## Install
-
 ```sh
 $ npm install shellby --save
 ```
