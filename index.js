@@ -13,10 +13,10 @@ var spawn = require('child_process').spawn;
  */
 function exec (cmd, cb) {
   var parts = cmd.split(/\s+/g)
-    , p = spawn( parts[0], parts.slice(1), { stdio: 'inherit' } );
+    , p = spawn( parts[0], parts.slice(1), [], { stdio: 'inherit' } );
   
   p.on('error', function (err) {
-    console.log( err );
+    if (cb) cb(err);
   });
   
   p.on('exit', function(code){
