@@ -1,15 +1,31 @@
 # shellby [![Build Status](https://secure.travis-ci.org/isRuslan/shellby.png?branch=master)](http://travis-ci.org/isRuslan/shellby)
 
-exec shell commands
+> Run single/series shell commands.
 
-## Getting Started
-Install the module with: `npm install shellby`
+## Install
+
+```sh
+$ npm install shellby --save
+```
+
+## Usage
 
 ```javascript
 var shellby = require('shellby');
+
+shellby.exec('mkdir hello', function (err) {
+  console.log('dir created');
+});
+
+shellby.series(['git pull', 'npm i'], function (err) {
+  console.log('done');
+});
 ```
-## Examples
-_(Coming soon)_
+
+## Test
+```sh
+npm test
+```
 
 ## License
 Copyright (c) 2014 Ruslan Ismagilov. Licensed under the MIT license.
