@@ -1,7 +1,7 @@
 {
   "name": "shellby",
   "version": "0.1.0",
-  "description": "exec shell commands",
+  "description": "Run series shell commands",
   "license": "MIT",
   "homepage": "https://github.com/isRuslan/shellby",
   "bugs": "https://github.com/isRuslan/shellby/issues",
@@ -22,12 +22,13 @@
     "shell",
     "exec",
     "mutiple exec",
+    "series commands",
     "command"
   ],
   "devDependencies": {
     "mocha": "*"
   },
   "scripts": {
-    "test": "mocha --no-colors --reporter spec"
+    "test": "mocha --reporter spec"
   }
 }
