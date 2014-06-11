@@ -1,16 +1,13 @@
-/*! poly v0.1.0 - MIT license */
-
 'use strict';
+/**
+ * Shellby - shell commands runner.
+ */
 
 /**
  * Module dependencies
  */
 var spawn = require('child_process').spawn;
 
-/**
- * @param {}
- * @return {}
- */
 function exec (cmd, cb) {
   var parts = cmd.split(/\s+/g)
     , p = spawn( parts[0], parts.slice(1), [], { stdio: 'inherit' } );
