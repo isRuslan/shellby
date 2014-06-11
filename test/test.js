@@ -4,9 +4,7 @@ var shellby = require('../')
 
 var dummyFile = Math.random().toString(36).substring(7) + '.txt';
 
-describe('Create ' + dummyFile + ' with shellby:', function () {
-  var captured_stdout;
-
+describe('Exec: create a file with shellby:', function () {  
   before(function (done) {
   	shellby.exec('touch ' + dummyFile, function (error) {
   		if (error) done(error);
@@ -21,6 +19,35 @@ describe('Create ' + dummyFile + ' with shellby:', function () {
     });
   });
 
+  after(function (done) {
+  	exec('rm -rf ' + dummyFile, function (error, stdout, stderr) {
+      if (error) done(error);
+      done();
+    });
+  });
+});
+
+describe('Series: create a file and write text there:', function () {
+  before(function (done) {
+  	shellby.series(['touch ' + dummyFile, 'echo "Dummy test" > ' + dummyFile], function (error) {
+  		if (error) done(error);
+  		done();
+  	});
+  });
+
+  it('Should say that file exist', function() {
+    var cmd = '[ -f ' + dummyFile + ' ] && echo "exist"';
+    exec(cmd, function (error, stdout, stderr) {
+      assert.equal(stdout, 'exist\n');
+    });
+  });
+
+  it('Should say that text in file correct', function() {
+    var cmd = 'cat > ' + dummyFile;
+    exec(cmd, function (error, stdout, stderr) {
+      assert.equal(stdout, 'Dummy text\n');
+    });
+  });
 
   after(function (done) {
   	exec('rm -rf ' + dummyFile, function (error, stdout, stderr) {
