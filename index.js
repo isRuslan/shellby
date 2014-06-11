@@ -13,7 +13,7 @@ var spawn = require('child_process').spawn;
  */
 function exec (cmd, cb) {
   var parts = cmd.split(/\s+/g)
-    , p = spawn( parts[0], parts.slice(1), {stdio: 'inherit'} );
+    , p = spawn( parts[0], parts.slice(1), { stdio: 'inherit' } );
   
   p.on('error', function (err) {
     console.log( err );
@@ -28,6 +28,7 @@ function exec (cmd, cb) {
     }
     if (cb) cb(err);
   });
+
 }
 
 function series (cmds, cb) {
