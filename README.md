@@ -47,7 +47,7 @@ npm test
 
 ## Credits
 
-You can can run series sell commands due to this people:
+You can can run series shell commands due to this people:
 
 <table>
 <thead>
