@@ -45,5 +45,20 @@ shellby.series([
 npm test
 ```
 
+## Credits
+
+You can can run series sell commands due to this people:
+
+<table>
+<thead>
+<tr><th align="left">Name</th><th>GitHub</th></tr>
+</thead>
+<tbody>
+<tr><td align="left">Ruslan Ismagilov</td><td><a href="https://github.com/isRuslan">@isRuslan</a></td></tr>
+<tr><td align="left">Jan Bölsche</td><td><a href="https://github.com/https://github.com/regular">@regular</a></td></tr>
+</tbody>
+</table>
+
+
 ## License
 Copyright (c) 2014 Ruslan Ismagilov. Licensed under the MIT license.
