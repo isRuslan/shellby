@@ -1,6 +1,6 @@
 {
   "name": "shellby",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Run series shell commands",
   "license": "MIT",
   "homepage": "https://github.com/isRuslan/shellby",
@@ -15,7 +15,7 @@
     "url": "https://github.com/isRuslan/shellby"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha"
+    "test": "mocha --reporter spec"
   },
   "keywords": [
     "unix",
@@ -27,8 +27,5 @@
   ],
   "devDependencies": {
     "mocha": "*"
-  },
-  "scripts": {
-    "test": "mocha --reporter spec"
   }
 }
