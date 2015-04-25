@@ -8,9 +8,13 @@
  */
 var spawn = require('child_process').spawn;
 
-function exec (cmd, cb) {
+function exec (cmd, opts, cb) {
+  if (typeof opts ===  'function') {
+    cb = opts;
+    opts = { stdio: 'inherit' };
+  }
   var parts = cmd.split(/\s+/g)
-    , p = spawn( parts[0], parts.slice(1), [], { stdio: 'inherit' } );
+    , p = spawn( parts[0], parts.slice(1), [], opts );
   
   p.on('error', function (err) {
     if (cb) cb(err);
